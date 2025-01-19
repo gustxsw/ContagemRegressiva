@@ -1,0 +1,228 @@
+body {
+    font-family: 'Montserrat', sans-serif; /* Fonte minimalista e elegante */
+    background: linear-gradient(135deg, #ff0000, #ff4e50);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px; /* Espaço para telas pequenas */
+  }
+  
+  /* Efeito de gradiente */
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Container principal */
+  .container {
+    background: rgba(255, 76, 76, 0.9);
+    padding: 30px; /* Aumenta o espaçamento interno para mais conforto */
+    border-radius: 25px; /* Bordas mais arredondadas para suavizar */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Sombra suave e elegante */
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative; /* Para adicionar um efeito sutil de brilho nas bordas */
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  .container:hover {
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)); /* Efeito sutil de brilho */
+    z-index: -1; /* Para ficar atrás do conteúdo */
+    pointer-events: none;
+    transition: all 0.3s ease; /* Transição suave para o efeito de brilho */
+  }
+  
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #fff;
+    line-height: 1.5;
+  }
+  
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d60000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #b80000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contagem regressiva */
+  #countdown {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  #countdown span {
+    font-family: 'Great Vibes', cursive;
+    color: #ffe6e6;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  #countdown span.updated {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  
+  /* Botão especial */
+  #specialButton {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d60000;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #specialButton:hover {
+    background-color: #b80000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Partículas de coração */
+  .heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0.7);
+    opacity: 0.8;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
+    animation: floatUp ease-in-out forwards;
+  }
+  
+  @keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+  
+  /* Mensagem romântica */
+  .romantic-message {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    color: #ffe6e6;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes starfall {
+    0% {
+      transform: translateY(-100px) scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) scale(1);
+      opacity: 0;
+    }
+  }
+  
+  .star {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: starfall linear infinite;
+    animation-duration: 2s;
+  }
+  
+  @keyframes smoke {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(0.7);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px) scale(1.5);
+    }
+  }
+  
+  .smoke {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: smoke 5s infinite;
+  }
+  
+  @keyframes floatHeart {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-200px) scale(1.5);
+      opacity: 0;
+    }
+  }
+  
+  .heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0.7);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
+    animation: floatHeart 4s ease-in-out infinite;
+  }
+  
