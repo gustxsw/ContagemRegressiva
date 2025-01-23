@@ -46,6 +46,8 @@ p {
     color: #ffe6e6;
 }
 
+
+
 button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -154,23 +156,6 @@ button:hover {
   display: none;
 }
 
-/* Partículas de coração */
-.heart {
-  position: absolute;
-  bottom: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 0, 0, 0.7);
-  opacity: 0.8;
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
-  animation: floatUp ease-in-out forwards;
-}
-
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100vh); opacity: 0; }
-}
-
 /* Mensagem romântica */
 .romantic-message {
   font-size: 1.2rem;
@@ -180,6 +165,36 @@ button:hover {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   animation: fadeIn 2s ease-in-out;
 }
+
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Impede que interfira na interação do usuário */
+  overflow: hidden; /* Impede o scroll causado pelos corações */
+  z-index: 1; /* Fica atrás do conteúdo principal */
+}
+
+.heart {
+  position: absolute;
+  top: -10px;
+  color: #e50606;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+}
+
 
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(10px); }
@@ -231,26 +246,6 @@ button:hover {
   animation: smoke 5s infinite;
 }
 
-@keyframes floatHeart {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-200px) scale(1.5);
-    opacity: 0;
-  }
-}
-
-.heart {
-  position: absolute;
-  bottom: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 0, 0, 0.7);
-  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 50% 82%, 18% 100%, 0% 38%);
-  animation: floatHeart 4s ease-in-out infinite;
-}
 
 .photo-gallery {
   display: flex;
