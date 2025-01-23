@@ -1,0 +1,134 @@
+/* Configurações gerais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #fef3f3, #ffe8e8);
+    margin: 0;
+    padding: 0 10px; /* Reduzir a margem lateral em telas pequenas */
+    color: #333;
+}
+
+/* Título da página */
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff6b6b;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.4);
+}
+
+/* Container principal */
+.timeline-container {
+    width: 100%; /* Usar todo o espaço disponível em telas pequenas */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 10px; /* Arredondamento menor para menos espaço ocupado */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Separadores entre períodos */
+.timeline-period {
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.timeline-period h2 {
+    font-size: 1.2rem; /* Reduzir tamanho do título */
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-period::after {
+    content: '';
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: #ff6b6b;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Galeria de fotos */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* Ajustar tamanho mínimo */
+    gap: 8px; /* Espaçamento menor entre as fotos */
+    margin-top: 20px;
+}
+
+.timeline-photo {
+    width: 100%;
+    height: auto; /* Garantir que as proporções sejam mantidas */
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.timeline-photo:hover {
+    transform: none; /* Remove o aumento */
+    box-shadow: none; /* Remove o destaque */
+}
+
+
+/* Reduzir tamanho da imagem 15 */
+.timeline-photo[alt*="A despedida 1"] {
+    width: 60px;
+    height: 60px;
+}
+
+/* Botão de voltar */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff7b7b, #ff5252);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 82, 82, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ff5252, #ff7b7b);
+    transform: translateY(-2px);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+    .timeline-container {
+        padding: 15px;
+    }
+
+    .timeline-photo {
+        border-radius: 8px;
+    }
+
+    button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}
+
+.timeline-period:last-child .timeline-photo {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    display: block;
+}
+
+.intro-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff6b6b;
+    margin: 20px;
+    font-style: italic;
+    opacity: 0.8;
+  }

@@ -1,0 +1,132 @@
+/* Estilo geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f3df;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Container do quiz */
+  .quiz-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  /* Título */
+  h1 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(255, 107, 107, 0.4);
+  }
+  
+  /* Pergunta */
+  .question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Opções */
+  .options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .options button:hover {
+    background-color: #ff4a4a;
+    transform: translateY(-2px);
+  }
+  
+  /* Caixa de mensagem */
+  .message-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffefef;
+    border: 1px solid #ff6b6b;
+    border-radius: 8px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .message-box button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .message-box button:hover {
+    background-color: #ff4a4a;
+  }
+  
+  /* Botão de voltar */
+  #back-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #back-button:hover {
+    background-color: #ff4a4a;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .quiz-container {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .question {
+      font-size: 1.25rem;
+    }
+  
+    .options button {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  
+    #back-button {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  }  

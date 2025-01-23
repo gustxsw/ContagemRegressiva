@@ -83,4 +83,39 @@ function updateBackground() {
 updateBackground();
 setInterval(updateBackground, 60000);
 
-// Gostaria de deixar esse código de teste
+function revealSurprise() {
+  const surpriseImage = document.getElementById('surpriseImage');
+  surpriseImage.src = 'surpresa.jpg'; // Substitua pelo caminho da foto
+  surpriseImage.style.display = 'block';
+}
+
+// Revelar Fotos ao passar o mouse
+const photos = document.querySelectorAll('.photo-grid img');
+photos.forEach(photo => {
+  photo.addEventListener('mouseover', () => {
+      photo.classList.remove('hidden');
+  });
+  photo.addEventListener('mouseout', () => {
+      photo.classList.add('hidden');
+  });
+});
+
+// Animação para scroll suave (opcional)
+document.querySelectorAll('.timeline-photo').forEach(photo => {
+  photo.addEventListener('mouseenter', () => {
+      photo.style.transform = 'scale(1.2)'; // Zoom mais destacado
+  });
+
+  photo.addEventListener('mouseleave', () => {
+      photo.style.transform = 'scale(1)'; // Voltar ao estado original
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});

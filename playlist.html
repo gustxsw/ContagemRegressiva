@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist Especial</title>
+  <link rel="stylesheet" href="style_playlist.css">
+</head>
+<body>
+  <div class="playlist-container">
+    <h1>Minha Playlist para Você 💖</h1>
+    <div class="playlist">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0hcQFRiMOmVBTEZoOtNu9K?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <h2>Top 3 Músicas do Nosso Amor 🎶</h2>
+    <div class="music-ranking">
+      <div class="music-item" onclick="showMessage(1)">
+        <img src="imagens/capa1.jpeg" alt="Capa da música 1">
+        <p>1ª Música</p>
+      </div>
+      <div class="music-item" onclick="showMessage(2)">
+        <img src="imagens/capa2.jpeg" alt="Capa da música 2">
+        <p>2ª Música</p>
+      </div>
+      <div class="music-item" onclick="showMessage(3)">
+        <img src="imagens/capa3.jpeg" alt="Capa da música 3">
+        <p>3ª Música</p>
+      </div>
+    </div>
+    <div id="message-box" class="hidden">
+      <p id="message-text"></p>
+      <button onclick="closeMessage()">Fechar</button>
+    </div>
+    <button onclick="window.location.href='presentes.html'">Voltar</button>
+  </div>
+  <script src="script_playlist.js"></script>
+</body>
+</html>
