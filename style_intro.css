@@ -1,4 +1,3 @@
-/* Estilo geral */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
@@ -14,15 +13,13 @@ body {
     padding: 0 15px;
   }
   
-  /* Efeito de gradiente */
   @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
   
-  /* Container principal */
-  .container {
+  .intro-container {
     background: rgba(255, 76, 76, 0.9);
     padding: 30px 20px;
     border-radius: 20px;
@@ -32,7 +29,6 @@ body {
     text-align: center;
   }
   
-  /* Título */
   h1 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -40,44 +36,32 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
   
-  /* Texto */
-  p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
+  #display-container {
+    font-size: 2rem;
+    font-weight: bold;
     color: #ffe6e6;
     line-height: 1.6;
+    height: 50px; /* Para manter o espaço ao trocar textos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  /* Botões */
-  .presents-buttons button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px 20px;
+  .romantic-message {
     font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    background: #d60000;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+    color: #ffe6e6;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 2s ease-in-out;
   }
   
-  .presents-buttons button:hover {
-    background: #b80000;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  .hidden {
+    display: none;
   }
   
-  .presents-buttons button:active {
-    transform: translateY(0);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsividade */
   @media (max-width: 480px) {
-    .container {
+    .intro-container {
       padding: 20px 15px;
     }
   
@@ -85,12 +69,12 @@ body {
       font-size: 1.8rem;
     }
   
-    p {
-      font-size: 1rem;
+    #display-container {
+      font-size: 1.5rem;
     }
   
-    .presents-buttons button {
+    .romantic-message {
       font-size: 1rem;
-      padding: 12px 18px;
     }
   }
+  
