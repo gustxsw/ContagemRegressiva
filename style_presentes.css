@@ -1,18 +1,18 @@
 /* Estilo geral */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 15px;
-  }
+  font-family: 'Montserrat', sans-serif; /* Atualizando para usar 'Montserrat' */
+  background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
   
   /* Efeito de gradiente */
   @keyframes gradientMove {
@@ -88,9 +88,40 @@ body {
     p {
       font-size: 1rem;
     }
-  
+
     .presents-buttons button {
       font-size: 1rem;
       padding: 12px 18px;
     }
   }
+
+  /* Container dos corações */
+#hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Impede interação com os corações */
+  overflow: hidden; /* Impede que os corações causem scroll */
+  z-index: 1; /* Fica atrás do conteúdo principal */
+}
+
+/* Estilo e animação dos corações */
+.heart {
+  position: absolute;
+  top: -10px;
+  color: #e50606;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+}

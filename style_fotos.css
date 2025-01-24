@@ -35,14 +35,14 @@ h1 {
 }
 
 .timeline-period h2 {
-    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(90deg, #ff4e4e, #f96d6d); /* Gradiente mais escuro */
     color: white;
     padding: 8px;
     border-radius: 8px;
     font-size: 1.5rem;
     display: inline-block;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(255, 154, 158, 0.5);
+    box-shadow: 0 4px 10px rgba(255, 78, 78, 0.5); /* Ajustado para tons mais escuros */
 }
 
 
@@ -91,18 +91,18 @@ button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background: linear-gradient(90deg, #ff7b7b, #ff5252);
+    background: linear-gradient(90deg, #ff3b3b, #d63434); /* Gradiente mais escuro */
     color: white;
     border: none;
     border-radius: 25px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(255, 82, 82, 0.5);
+    box-shadow: 0 4px 10px rgba(214, 52, 52, 0.5); /* Sombra ajustada */
 }
 
 button:hover {
-    background: linear-gradient(90deg, #ff5252, #ff7b7b);
+    background: linear-gradient(90deg, #d63434, #ff3b3b); /* Gradiente invertido para o hover */
     transform: translateY(-2px);
 }
 
@@ -129,11 +129,12 @@ button:hover {
     display: block;
 }
 
+/* Texto introdutório */
 .intro-message {
     text-align: center;
     font-size: 1.2rem;
-    color: #ff6b6b;
+    color: #ff3b3b; /* Cor mais escura para o texto */
     margin: 20px;
     font-style: italic;
-    opacity: 0.8;
-  }
+    opacity: 0.9; /* Leve ajuste de opacidade */
+}
