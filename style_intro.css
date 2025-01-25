@@ -1,5 +1,5 @@
 body {
-  font-family: 'Montserrat', sans-serif; /* Atualizando para usar 'Montserrat' */
+  font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
@@ -12,69 +12,99 @@ body {
   align-items: center;
   padding: 0 15px;
 }
-  
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.intro-container {
+  background: rgba(255, 76, 76, 0.9);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#display-container {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffe6e6;
+  line-height: 1.6;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.romantic-message {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #ffe6e6;
+  font-style: italic;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animações para números */
+.fade-out {
+  animation: fadeOut 0.5s ease-in forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
   .intro-container {
-    background: rgba(255, 76, 76, 0.9);
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+    padding: 20px 15px;
   }
-  
+
   h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem;
   }
-  
+
   #display-container {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffe6e6;
-    line-height: 1.6;
-    height: 50px; /* Para manter o espaço ao trocar textos */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.5rem;
   }
-  
+
   .romantic-message {
-    font-size: 1.2rem;
-    margin-top: 15px;
-    color: #ffe6e6;
-    font-style: italic;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 2s ease-in-out;
+    font-size: 1rem;
   }
-  
-  .hidden {
-    display: none;
-  }
-  
-  @media (max-width: 480px) {
-    .intro-container {
-      padding: 20px 15px;
-    }
-  
-    h1 {
-      font-size: 1.8rem;
-    }
-  
-    #display-container {
-      font-size: 1.5rem;
-    }
-  
-    .romantic-message {
-      font-size: 1rem;
-    }
-  }
-  
+}
