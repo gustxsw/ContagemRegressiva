@@ -77,7 +77,7 @@ function showQuestion() {
   });
 
   // Atualiza a barra de progresso
-  const progress = ((currentQuestionIndex / questions.length) * 100).toFixed(2);
+  const progress = (((currentQuestionIndex + 1) / questions.length) * 100).toFixed(2);
   progressBar.style.width = `${progress}%`;
   progressBar.textContent = `${progress}%`;
 }
