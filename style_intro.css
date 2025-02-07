@@ -1,8 +1,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
+  background: linear-gradient(135deg, #cc3b3b, #ff8585); /* Gradiente mais escuro */
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
+  -webkit-animation: gradientMove 10s ease infinite; /* Força a animação no celular */
+  background-attachment: fixed; /* Mantém o fundo fixo no mobile */
   color: #fff;
   text-align: center;
   height: 100vh;
@@ -20,7 +22,7 @@ body {
 }
 
 .intro-container {
-  background: rgba(255, 76, 76, 0.9);
+  background: rgba(240, 80, 80, 0.9); /* Fundo semitransparente combinando com o novo gradiente */
   padding: 30px 20px;
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -91,7 +93,12 @@ h1 {
   }
 }
 
-@media (max-width: 480px) {
+/* Ajuste extra para telas menores */
+@media (max-width: 768px) {
+  body {
+    background-size: 300% 300%;
+  }
+
   .intro-container {
     padding: 20px 15px;
   }

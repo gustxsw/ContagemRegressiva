@@ -1,9 +1,11 @@
 /* Estilo geral */
 body {
-  font-family: 'Montserrat', sans-serif; /* Atualizando para usar 'Montserrat' */
-  background: linear-gradient(135deg, #ff5a5a, #ffb6b6);
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffc2c2, #ff7575); /* Gradiente alternando entre vermelho escuro e vermelho claro */
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
+  -webkit-animation: gradientMove 10s ease infinite; /* Garante animação no celular */
+  background-attachment: fixed;
   color: #fff;
   text-align: center;
   height: 100vh;
@@ -13,98 +15,102 @@ body {
   align-items: center;
   padding: 0 15px;
 }
-  
-  /* Efeito de gradiente */
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+/* Efeito de gradiente */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container principal */
+.container {
+  background: rgba(240, 80, 80, 0.9); /* Vermelho mais vivo */
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #ffe6e6;
+  line-height: 1.6;
+}
+
+/* Botões */
+.presents-buttons button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: #d60000;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.presents-buttons button:hover {
+  background: #b80000;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.presents-buttons button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  body {
+    background-size: 300% 300%;
   }
-  
-  /* Container principal */
+
   .container {
-    background: rgba(255, 76, 76, 0.9);
-    padding: 30px 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+    padding: 20px 15px;
   }
-  
-  /* Título */
+
   h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem;
   }
-  
-  /* Texto */
+
   p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-    color: #ffe6e6;
-    line-height: 1.6;
+    font-size: 1rem;
   }
-  
-  /* Botões */
+
   .presents-buttons button {
-    width: 100%;
-    margin: 10px 0;
-    padding: 15px 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    background: #d60000;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    padding: 12px 18px;
   }
-  
-  .presents-buttons button:hover {
-    background: #b80000;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  .presents-buttons button:active {
-    transform: translateY(0);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Responsividade */
-  @media (max-width: 480px) {
-    .container {
-      padding: 20px 15px;
-    }
-  
-    h1 {
-      font-size: 1.8rem;
-    }
-  
-    p {
-      font-size: 1rem;
-    }
+}
 
-    .presents-buttons button {
-      font-size: 1rem;
-      padding: 12px 18px;
-    }
-  }
-
-  /* Container dos corações */
+/* Container dos corações */
 #hearts-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Impede interação com os corações */
-  overflow: hidden; /* Impede que os corações causem scroll */
-  z-index: 1; /* Fica atrás do conteúdo principal */
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* Estilo e animação dos corações */
