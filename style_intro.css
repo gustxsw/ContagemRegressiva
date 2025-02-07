@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #cc3b3b, #ff8585); /* Gradiente mais escuro */
+  background: linear-gradient(135deg, #ff5a5a, #ffb6b6); /* Gradiente mais escuro */
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
   -webkit-animation: gradientMove 10s ease infinite; /* Força a animação no celular */

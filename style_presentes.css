@@ -1,7 +1,7 @@
 /* Estilo geral */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #ffc2c2, #ff7575); /* Gradiente alternando entre vermelho escuro e vermelho claro */
+  background: linear-gradient(135deg, #ff5a5a, #ffb6b6); /* Gradiente alternando entre vermelho escuro e vermelho claro */
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
   -webkit-animation: gradientMove 10s ease infinite; /* Garante animação no celular */
