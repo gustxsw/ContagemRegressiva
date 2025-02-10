@@ -1,147 +1,144 @@
 /* Configurações gerais */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  /* Container da playlist */
+  font-family: 'Poppins', sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container da playlist */
+.playlist-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  font-size: 2rem;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(255, 107, 107, 0.4);
+}
+
+/* Estilo do iframe (Spotify) */
+.playlist iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão de voltar - Estilo igual ao da carta */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #ff3b3b, #d63434);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(214, 52, 52, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #d63434, #ff3b3b);
+  transform: translateY(-2px);
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
   .playlist-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Título */
-  h1 {
-    font-size: 2rem;
-    color: #ff6b6b;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 4px rgba(255, 107, 107, 0.4);
-  }
-  
-  /* Estilo do iframe (Spotify) */
-  .playlist iframe {
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Botão de voltar */
-  button {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 24px;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  button:hover {
-    background-color: #ff4a4a;
-    transform: translateY(-2px);
-  }
-  
-  /* Responsividade para dispositivos móveis */
-  @media (max-width: 768px) {
-    .playlist-container {
       padding: 15px;
-    }
-  
-    h1 {
+  }
+
+  h1 {
       font-size: 1.5rem;
-    }
-  
-    button {
+  }
+
+  button {
       font-size: 0.9rem;
       padding: 10px 20px;
-    }
   }
+}
 
-  /* Ranking de músicas */
+/* Ranking de músicas */
 .music-ranking {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .music-item {
-    width: 150px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .music-item img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
-  }
-  
-  .music-item img:hover {
-    transform: scale(1.1);
-  }
-  
-  .music-item p {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #555;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
 
-  .hidden {
-    display: none;
-  }
-  
-  /* Caixa de mensagem */
-  #message-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    text-align: center;
-    z-index: 1000;
-    display: none;
-  }
-  
-  #message-box p {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  #message-box button {
-    padding: 10px 20px;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #message-box button:hover {
-    background-color: #ff4a4a;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+.music-item {
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.music-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.music-item img:hover {
+  transform: scale(1.1);
+}
+
+.music-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Caixa de mensagem */
+#message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  z-index: 1000;
+  display: none;
+}
+
+#message-box p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#message-box button {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #ff3b3b, #d63434);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(214, 52, 52, 0.2);
+}
+
+#message-box button:hover {
+  background: linear-gradient(90deg, #d63434, #ff3b3b);
+  transform: translateY(-2px);
+}
