@@ -1,74 +1,383 @@
-/* Reset e configurações básicas */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@300;400;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background: #fafaf5; /* Fundo claro */
-    font-family: 'Georgia', serif; /* Estilo clássico e elegante */
-    color: #333; /* Texto em tom escuro para boa legibilidade */
-    line-height: 1.8; /* Aumenta o espaçamento entre as linhas */
+  margin: 0;
+  padding: 20px 10px;
+  background: linear-gradient(135deg, #ffeef8, #ffe0f0, #ffd6eb, #ffcce6);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  font-family: 'Playfair Display', serif;
+  color: #4a2c2a;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
 }
 
-/* Carta com fundo de linhas mais visíveis */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 182, 193, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(255, 192, 203, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 50% 50%, rgba(255, 228, 225, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
 .letter-container {
-    padding: 30px;
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 8px; /* Bordas mais sutis */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom, rgba(240, 240, 240, 0.9) 1px, transparent 1px); /* Linhas mais visíveis */
-    background-size: 100% 20px; /* Linhas finas a cada 20px */
-    background-position: top left;
+  padding: 50px 40px;
+  max-width: 900px;
+  margin: 30px auto;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 250, 0.95));
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 
+    0 25px 50px rgba(255, 182, 193, 0.3),
+    0 15px 30px rgba(255, 192, 203, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 192, 203, 0.3);
+  position: relative;
+  z-index: 10;
+  animation: containerGlow 4s ease-in-out infinite alternate;
+  
+  /* Efeito de papel com linhas sutis */
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 192, 203, 0.1) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 248, 250, 0.95));
+  background-size: 100% 25px, 100% 100%;
+  background-position: 0 0, 0 0;
 }
 
-/* Estilo do título */
+@keyframes containerGlow {
+  0% {
+    box-shadow: 
+      0 25px 50px rgba(255, 182, 193, 0.3),
+      0 15px 30px rgba(255, 192, 203, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    box-shadow: 
+      0 30px 60px rgba(255, 182, 193, 0.4),
+      0 20px 40px rgba(255, 192, 203, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  }
+}
+
 h1 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #ff3b3b, #d63434);
-    -webkit-background-clip: text;
-    color: transparent;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #d63384, #e91e63, #f06292);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 10px rgba(214, 51, 132, 0.3);
+  animation: titleFloat 3s ease-in-out infinite alternate;
+  position: relative;
 }
 
-/* Estilo do conteúdo da carta */
+@keyframes titleFloat {
+  0% { 
+    transform: translateY(0px);
+    filter: brightness(1);
+  }
+  100% { 
+    transform: translateY(-8px);
+    filter: brightness(1.1);
+  }
+}
+
+h1::before {
+  content: '💌';
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  animation: letterFloat 2s ease-in-out infinite;
+}
+
+h1::after {
+  content: '💕';
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  animation: heartPulse 2s ease-in-out infinite 1s;
+}
+
+@keyframes letterFloat {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-60%) scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes heartPulse {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateY(-50%) scale(1.3);
+    opacity: 1;
+  }
+}
+
 p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  color: #5d4e75;
+  text-align: justify;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  animation: textGlow 4s ease-in-out infinite alternate;
+  position: relative;
 }
 
-/* Botão de voltar */
+@keyframes textGlow {
+  0% { 
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+  100% { 
+    text-shadow: 0 2px 8px rgba(214, 51, 132, 0.15), 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Efeito especial para o primeiro parágrafo */
+p:first-of-type {
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  font-weight: 500;
+  color: #6b4c57;
+  margin-bottom: 30px;
+}
+
+/* Efeito especial para a assinatura */
+p:last-of-type {
+  text-align: right;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: #d63384;
+  margin-top: 40px;
+  animation: signatureGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes signatureGlow {
+  0% { 
+    color: #d63384;
+    text-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
+  }
+  100% { 
+    color: #e91e63;
+    text-shadow: 0 2px 12px rgba(233, 30, 99, 0.4);
+  }
+}
+
 button {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 25px;
-    background: linear-gradient(90deg, #ff3b3b, #d63434); /* Gradiente mais escuro */
-    color: white;
-    border: none;
-    border-radius: 20px; /* Bordas mais arredondadas */
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(214, 52, 52, 0.2); /* Sombra mais suave */
+  font-family: 'Poppins', sans-serif;
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 18px 35px;
+  background: linear-gradient(135deg, #e91e63, #d63384, #c2185b);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 25px rgba(233, 30, 99, 0.3),
+    0 5px 15px rgba(214, 51, 132, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+  animation: buttonFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes buttonFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+button:hover::before {
+  left: 100%;
 }
 
 button:hover {
-    background: linear-gradient(90deg, #d63434, #ff3b3b); /* Gradiente invertido para o hover */
-    transform: translateY(-2px);
+  background: linear-gradient(135deg, #f06292, #e91e63, #d63384);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 15px 35px rgba(233, 30, 99, 0.4),
+    0 8px 20px rgba(214, 51, 132, 0.3);
+}
+
+button:active {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Efeito de brilho sutil no container */
+.letter-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  background-size: 200% 200%;
+  animation: shimmer 6s infinite;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% -200%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* Decorações sutis */
+.letter-container::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid rgba(255, 192, 203, 0.2);
+  border-radius: 25px;
+  pointer-events: none;
+  animation: borderGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+  0% { border-color: rgba(255, 192, 203, 0.2); }
+  100% { border-color: rgba(233, 30, 99, 0.3); }
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .letter-container {
-        padding: 15px 10px;
-    }
+  .letter-container {
+    padding: 35px 25px;
+    border-radius: 25px;
+    margin: 20px auto;
+  }
 
-    h1 {
-        font-size: 1.8rem;
-    }
+  h1::before,
+  h1::after {
+    font-size: 2rem;
+    left: -45px;
+    right: -45px;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  p:first-of-type {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+  }
+
+  p:last-of-type {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px 5px;
+  }
+
+  .letter-container {
+    padding: 25px 20px;
+    border-radius: 20px;
+    margin: 15px auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  h1::before,
+  h1::after {
+    font-size: 1.5rem;
+    left: -35px;
+    right: -35px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
+  p:first-of-type {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  p:last-of-type {
+    font-size: 1.4rem;
+    margin-top: 25px;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .letter-container::before {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 15px;
+  }
 }

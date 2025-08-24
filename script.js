@@ -44,26 +44,30 @@ updateCountdown();
 setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "heart";
+    heart.innerHTML = "💖";
     heart.style.left = `${Math.random() * 100}%`;
-    heart.style.animationDuration = `${3 + Math.random() * 2}s`;
-    document.body.appendChild(heart);
+    heart.style.animationDuration = `${4 + Math.random() * 3}s`;
+    heart.style.fontSize = `${12 + Math.random() * 8}px`;
+    heart.style.opacity = Math.random() * 0.7 + 0.3;
+    document.getElementById("hearts-container").appendChild(heart);
   
     setTimeout(() => {
       heart.remove();
-    }, 5000);
-}, 500);
+    }, 7000);
+}, 800);
 
-// Adiciona estrelas cadentes
+// Adiciona partículas mágicas
 setInterval(() => {
-    const star = document.createElement("div");
-    star.className = "star";
-    star.style.left = `${Math.random() * 100}%`; // Distribui aleatoriamente
-    document.body.appendChild(star);
+    const particle = document.createElement("div");
+    particle.className = "magic-particle";
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+    document.body.appendChild(particle);
 
     setTimeout(() => {
-        star.remove();
-    }, 2000); // Duração da estrela cadente
-}, 2000);
+        particle.remove();
+    }, 5000);
+}, 1500);
 
 // Alteração do fundo com base no horário
 function updateBackground() {
